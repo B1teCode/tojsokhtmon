@@ -1,0 +1,173 @@
+.complex-table-container {
+  position: relative;
+  padding: 20px;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/* Стили для спиннера загрузки */
+.complex-table-container .loading-spinner {
+  margin: 250px auto;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #dee8e1;
+  border-top: 5px solid #10554b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Анимация для спиннера загрузки */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Стили для таблицы */
+.complex-table {
+  width: 90%; /* Таблица занимает 90% ширины контейнера */
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #10554b;
+  padding: 20px;
+  transform: scale(1); /* Начальное масштабирование */
+  transform-origin: top center; /* Центр масштабирования - верхняя часть таблицы */
+  transition: transform 0.3s ease; /* Плавное изменение масштаба */
+}
+
+.complex-table th, .complex-table td {
+  border: 1px solid #a0c1be;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 16px; /* Начальный размер шрифта */
+}
+
+.complex-table th {
+  background-color: #dee8e1;
+  color: #10554b;
+  font-weight: bold;
+}
+
+.complex-table td {
+  background-color: #f9f9f9;
+}
+
+.complex-table tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+.complex-table tr:hover {
+  background-color: #e0f2f1;
+}
+
+/* Стили для кнопки удаления */
+.delete-button {
+  background-color: #10554b;
+  color: #dee8e1;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 6px;
+}
+
+.delete-button:hover {
+  background-color: #093c2e;
+  transform: scale(1.05);
+}
+
+.delete-button.loading {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #dee8e1;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 80%;
+  max-width: 450px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal p {
+  margin: 15px 0;
+  color: #10554b;
+  font-size: 16px;
+}
+
+.modal-button {
+  background-color: #10554b;
+  color: #dee8e1;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.modal-button:hover {
+  background-color: #093c2e;
+  transform: scale(1.05);
+}
+
+.modal .loading-spinner{
+  margin: 0px auto !important;
+}
+
+/* Адаптивность модального окна */
+@media (max-width: 600px) {
+  .modal {
+      width: 90%;
+  }
+}
+
+/* Адаптивность таблицы */
+@media (max-width: 1024px) {
+  .complex-table {
+      transform: scale(0.7); /* Масштабирование до 90% */
+  }
+  .complex-table th, .complex-table td {
+      font-size: 14px; /* Уменьшение размера шрифта */
+  }
+}
+
+@media (max-width: 768px) {
+  .complex-table {
+      transform: scale(0.6); /* Масштабирование до 80% */
+  }
+  .complex-table th, .complex-table td {
+      font-size: 12px; /* Уменьшение размера шрифта */
+  }
+}
+
+@media (max-width: 600px) {
+  .complex-table {
+      transform: scale(0.4); /* Масштабирование до 70% */
+      padding: 10px;
+  }
+  .complex-table th, .complex-table td {
+      font-size: 10px; /* Уменьшение размера шрифта */
+  }
+}

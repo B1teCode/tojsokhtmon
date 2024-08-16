@@ -1,0 +1,110 @@
+*{
+  box-sizing: border-box;
+}
+.filters-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 30px;
+  padding: 0;
+}
+.form-group1, .form-group2{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  box-sizing: border-box;
+}
+.form-control {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.35rem;
+  border: 1px solid #ccc;
+  outline: none !important;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.09);
+}
+
+.room-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  background-color: #f5f5f5;
+  padding: 0.38em 0.4em;
+  border-radius: 4px;
+  
+}
+input::placeholder{
+  color: #000;
+}
+.room-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #ccc;
+  outline: none !important;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.09);
+  font-size: 0.9em;
+}
+
+.room-option.selected {
+  border: 1px solid #10554B;
+}
+
+.room-option input {
+  display: none;
+}
+.form-group-btn{
+  grid-column-start: 3;
+  grid-column-end: 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.reset-button, .submit-button {
+  width: 200px;
+  padding: 0.7rem;
+  border-radius: 4px;
+  background-color: #10554B;
+  border: 1px solid #10554B;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+}
+@media (670px <= width <= 920px){
+  .filters-form{
+    gap: 15px;
+  }
+  .form-group1, .form-group2{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (width <= 670px){
+  .filters-form{
+    gap: 10px;
+  }
+  .form-group1, .form-group2{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .form-group-btn{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,137 @@
+.apartment-card {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .apartment-card h3{
+    font-size: 1em;
+  }
+  .header-card .zhk{
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 950px) and (min-width: 800px){
+  .header-card .zhk{
+    font-size: 0.6em;
+  }
+}
+@media screen and (max-width: 650px) and (min-width: 500px){
+  .apartment-card h3{
+    font-size: 0.8em;
+  }
+  .header-card .zhk{
+    font-size: 0.6em;
+  }
+}
+.header-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 1.5rem;
+}
+
+.header-card k p{
+  font-size: 0.9em;
+  color: #777;
+}
+.apr-img{
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid #ced4da;
+
+}
+.apr-img img {
+  margin: 0 auto;
+  max-width: 280px;
+  height: 230px;
+}
+@media ( 500px <= width <= 1041px) {
+  .apr-img img{
+    width: 100%;
+  }
+  
+}
+.apartment-card h3 {
+  margin-bottom: 0.2rem;
+}
+
+.additional-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.additional-info table{
+  width: 100%;
+}
+.additional-info table td:first-child{
+  color: #777;
+}
+.additional-info table td{
+  font-size: 0.8em;
+  font-weight: 500;
+  line-height: 1.4em;
+}
+
+.additional-info.show {
+  max-height: 200px; /* Adjust as necessary */
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.show-more-button {
+  width: 20%;
+  height: 35px;
+  background-color: #10554B;
+  color: #DEE8E1;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-btn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.card-btn .btn-sibmin{
+  width: 78%;
+  height: 35px;
+  border-radius: 4px;
+  background-color: #DEE8E1;
+  border: 1px solid #DEE8E1;
+  cursor: pointer;
+  gap: 5px;
+  position: relative;
+  background-color: #DEE8E1;
+  color: #10554B;
+}
+.btn-sibmin span{
+  position: absolute;
+  top: 0.15rem;
+  left: 0;
+  width: 20%;
+  border-right: 0.7px solid #10554B;
+  padding: 0.1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-price{
+  font-weight: 500;
+}

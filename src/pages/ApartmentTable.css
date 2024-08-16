@@ -1,0 +1,113 @@
+.apartment-table-container {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Стили для спиннера загрузки */
+.apartment-table-container .loading-spinner {
+  margin: 250px auto;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #dee8e1;
+  border-top: 5px solid #10554b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Анимация для спиннера загрузки */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Стили для таблицы */
+.apartment-table {
+  width: 90%; /* Таблица занимает 90% ширины контейнера */
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+  transform: scale(1); /* Начальное масштабирование */
+  transform-origin: top center; /* Центр масштабирования - верхняя часть таблицы */
+  transition: transform 0.3s ease; /* Плавное изменение масштаба */
+}
+
+.apartment-table th, .apartment-table td {
+  border: 1px solid #a0c1be;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 16px; /* Начальный размер шрифта */
+}
+
+.apartment-table th {
+  background-color: #dee8e1;
+  color: #10554b;
+  font-weight: bold;
+}
+
+.apartment-table td {
+  background-color: #f9f9f9;
+}
+
+.apartment-table tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+.apartment-table tr:hover {
+  background-color: #e0f2f1;
+}
+
+/* Стили для фильтров */
+.filters {
+  margin: 20px 0;
+}
+
+.filters select {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #10554b;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .apartment-table {
+      transform: scale(0.7); /* Масштабирование до 90% */
+  }
+  .apartment-table th, .apartment-table td {
+      font-size: 14px; /* Уменьшение размера шрифта */
+  }
+}
+
+@media (max-width: 768px) {
+  .apartment-table {
+      transform: scale(0.6); /* Масштабирование до 80% */
+  }
+  .apartment-table th, .apartment-table td {
+      font-size: 12px; /* Уменьшение размера шрифта */
+  }
+}
+
+@media (max-width: 600px) {
+  .apartment-table {
+      transform: scale(0.4); /* Масштабирование до 70% */
+      padding: 10px;
+  }
+  .apartment-table th, .apartment-table td {
+      font-size: 10px; /* Уменьшение размера шрифта */
+  }
+  .filters select {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+
+/* Центрирование спиннера загрузки в модальном окне */
+.modal .loading-spinner {
+  margin: 0 auto !important;
+}
