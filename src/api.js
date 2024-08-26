@@ -1,5 +1,5 @@
 import { db } from './firebase';
-import { collection, getDocs, addDoc, query, where, orderBy, doc, deleteDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc, query, where, orderBy, doc, deleteDoc, updateDoc } from "firebase/firestore";
 
 const complexesCollection = collection(db, 'complexes');
 const apartmentsCollection = collection(db, 'apartments');
@@ -14,7 +14,7 @@ export const fetchComplexes = async () => {
 };
 
 // Функция для удаления жилого комплекса и связанных квартир
-export const deleteComplex = async (complexId) => {
+export const  deleteComplex = async (complexId) => {
   const apartmentsQuery = query(apartmentsCollection, where('complexId', '==', complexId));
   const apartmentsSnapshot = await getDocs(apartmentsQuery);
 
@@ -79,3 +79,12 @@ export const addComplex = async (data) => {
   await addDoc(complexesCollection, data);
 };
 
+export const updateApartment = async (apartmentId, updatedData) => {
+  const apartmentDoc = doc(db, 'apartments', apartmentId);
+  await updateDoc(apartmentDoc, updatedData);
+};
+
+export const updateComplex = async (complexId, updatedData) => {
+  const complexDoc = doc(db, 'complexes', complexId);
+  await updateDoc(complexDoc, updatedData);
+};

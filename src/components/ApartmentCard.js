@@ -20,7 +20,7 @@ const ApartmentCard = ({ apartment, complexName }) => {
   };
 
   const formatPrice = (price) => {
-    return price.toLocaleString('ru-RU') + ' сом.';
+    return price.toLocaleString('ru-RU') + ' смн.';
   };
 
   const renderAdditionalInfo = () => {
